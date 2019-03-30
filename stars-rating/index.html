@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .rating {
+            margin: 0 0 1em 0;
+            padding: 0;
+            border: none;
+        }
+
+        .rating-caption {
+            margin-bottom: .5em;
+            padding: 0;
+        }
+
+        .rating-group {
+            position: relative;
+            width: 10em;
+            height: 2em;
+            background-image: url(star-black.svg);
+            background-size: 2em auto;
+        }
+
+        .rating-star {
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2em;
+            height: 2em;   
+            font-size: inherit;     
+            margin: 0; 
+            background-size: 2em auto;
+        }
+
+        .rating-star:focus {
+            outline: none;
+        }
+
+        .rating-star:checked,
+        .rating-star:hover {
+            background-image: url(star-gold.svg);                    
+        }
+
+        .rating-star:hover ~ .rating-star {
+            background-image: url(star-black.svg);
+        }
+
+        .rating-star:nth-of-type(1) {
+            width: 2em;
+            z-index: 5;
+        }
+
+        .rating-star:nth-of-type(2) {
+            width: 4em;
+            z-index: 4;
+        }
+
+        .rating-star:nth-of-type(3) {
+            width: 6em;
+            z-index: 3;
+        }
+
+        .rating-star:nth-of-type(4) {
+            width: 8em;
+            z-index: 2;
+        }
+
+        .rating-star:nth-of-type(5) {
+            width: 10em;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <fieldset class="rating">
+        <legend class="rating-caption">Самочувствие</legend>
+        <div class="rating-group">
+            <input class="rating-star" type="radio" name="health" value="1" aria-lable="ужасно" checked>
+            <input class="rating-star" type="radio" name="health" value="2" aria-lable="сносно">
+            <input class="rating-star" type="radio" name="health" value="3" aria-lable="нормально">
+            <input class="rating-star" type="radio" name="health" value="4" aria-lable="хорошо">
+            <input class="rating-star" type="radio" name="health" value="5" aria-lable="отлично">
+        </div>
+    </fieldset>
+    <fieldset class="rating">
+        <legend class="rating-caption">Настроение</legend>
+        <div class="rating-group">
+            <input class="rating-star" type="radio" name="mood" value="1" aria-lable="ужасно" checked>
+            <input class="rating-star" type="radio" name="mood" value="2" aria-lable="сносно">
+            <input class="rating-star" type="radio" name="mood" value="3" aria-lable="нормально">
+            <input class="rating-star" type="radio" name="mood" value="4" aria-lable="хорошо">
+            <input class="rating-star" type="radio" name="mood" value="5" aria-lable="отлично">
+        </div>
+    </fieldset>
+
+
+</body>
+
+</html>
